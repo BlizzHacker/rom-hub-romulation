@@ -82,7 +82,7 @@ measured floor rather than a catalogue size.
 ## Install
 
 ```sh
-rom-hub plugin install https://git.moveweight.com/BlizzHacker/romarr-plugin-romulation --ref v0.1.0
+rom-hub plugin install https://git.moveweight.com/BlizzHacker/rom-hub-romulation --ref v0.1.0
 rom-hub search "contra" --platform nes
 ```
 
@@ -95,7 +95,7 @@ To list it in ROMarr's **Hub → Plugins** catalogue:
 
 ```sh
 rom-hub catalog add moveweight-romulation \
-  https://git.moveweight.com/BlizzHacker/romarr-plugin-romulation/raw/tag/v0.1.0/catalog/plugins.json
+  https://git.moveweight.com/BlizzHacker/rom-hub-romulation/raw/tag/v0.1.0/catalog/plugins.json
 rom-hub catalog refresh
 ```
 
