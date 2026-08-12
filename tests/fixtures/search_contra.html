@@ -1,0 +1,47 @@
+<!-- Trimmed from a live GET /roms/search?query=contra (2026-08-12).
+     Kept: the real row shape (region span, "[PLATFORM] Title" anchor, a
+     filesize cell, and the /buy/premium anchor in the last cell). Dropped:
+     site chrome, ads.
+
+     The last cell's <a href="/buy/premium"> is here on purpose: it is a
+     second anchor inside the same row, and a parser that takes "the first
+     link in the row" or "any link in the row" would eventually pick it up
+     instead of the ROM. The last row uses a platform RomuLation does not
+     serve, to exercise the drop path. -->
+<table class="roms">
+  <thead>
+    <tr><th>Region</th><th>Name</th><th>Size</th><th></th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="flags-usa">USA</span></td>
+      <td><a href="/rom/NES/Contra">[NES] Contra</a></td>
+      <td class="filesize">161.0 KB</td>
+      <td class="premium-download"><a href="/buy/premium"><img src="/images/download-icon.png" alt="download file"></a></td>
+    </tr>
+    <tr>
+      <td><span class="flags-usa">USA</span></td>
+      <td><a href="/rom/PS2/Neo-Contra-(U)">[PS2] Neo Contra</a></td>
+      <td class="filesize">1.04 GB</td>
+      <td class="premium-download"><a href="/buy/premium"><img src="/images/download-icon.png" alt="download file"></a></td>
+    </tr>
+    <tr>
+      <td><span class="flags-japan">Japan</span></td>
+      <td><a href="/rom/Game_Boy_Color/Contra-Spirits-J-SGB-Enhanced">[Game Boy Color] Contra Spirits</a></td>
+      <td class="filesize">408.2 KB</td>
+      <td class="premium-download"><a href="/buy/premium"><img src="/images/download-icon.png" alt="download file"></a></td>
+    </tr>
+    <tr>
+      <td><span class="flags-spain">Spain</span></td>
+      <td><a href="/rom/GBA/2658-Shinchan-contra-los-Munecos-de-Shock-Gahn-(S)(Independent)">[GBA] Shinchan contra los Munecos de Shock Gahn</a></td>
+      <td class="filesize">8.4 MB</td>
+      <td class="premium-download"><a href="/buy/premium"><img src="/images/download-icon.png" alt="download file"></a></td>
+    </tr>
+    <tr>
+      <td><span class="flags-usa">USA</span></td>
+      <td><a href="/rom/Amiga/Contra-Amiga-Port">[Amiga] Contra Amiga Port</a></td>
+      <td class="filesize">880.0 KB</td>
+      <td class="premium-download"><a href="/buy/premium"><img src="/images/download-icon.png" alt="download file"></a></td>
+    </tr>
+  </tbody>
+</table>

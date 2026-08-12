@@ -1,0 +1,32 @@
+{
+  "catalog_version": "1",
+  "updated": "2026-08-12",
+  "plugins": [
+    {
+      "slug": "romulation",
+      "name": "RomuLation",
+      "author": "MoveWeight",
+      "repository": "https://git.moveweight.com/BlizzHacker/romarr-plugin-romulation",
+      "install": "https://git.moveweight.com/BlizzHacker/romarr-plugin-romulation",
+      "download": "https://git.moveweight.com/BlizzHacker/romarr-plugin-romulation/archive/v0.1.0.tar.gz",
+      "version": "0.1.0",
+      "ref": "v0.1.0",
+      "updated": "2026-08-12",
+      "rpp_version": "1",
+      "capabilities": ["search"],
+      "platforms": [
+        "3ds", "dc", "gba", "gbc", "genesis-slash-megadrive", "n64", "nds",
+        "nes", "ngc", "ps2", "ps3", "psp", "psx", "saturn", "snes", "wii",
+        "xbox"
+      ],
+      "network": ["romulation.org", "www.romulation.org"],
+      "status": "caveat",
+      "search_only": true,
+      "key_required": false,
+      "in_tree": false,
+      "description": "Searches RomuLation through the site's own public search endpoint, reporting region and a real file size per hit. Indexes metadata only; it does not download.",
+      "terms": "RomuLation hosts mixed game content. This provider indexes metadata the site publishes on its own search page, downloads nothing, and does not touch the paths its robots.txt disallows. It grants no redistribution rights; operators are responsible for using it in accordance with applicable law and the source's terms.",
+      "comments": "Search-only by design. No importer: RomuLation's robots.txt disallows /roms/download, /roms/newdownload and /roms/archive, which are exactly the paths its download control uses; the download is additionally behind a paid premium account and an encrypted per-render token. No stream: the site hosts no player. All 17 platforms map to a ROMarr slug, so nothing is skipped. Note its sitemap omits four served platforms (NES, SNES, Game Boy Color, Sega Genesis), which is why the provider searches live rather than mirroring."
+    }
+  ]
+}

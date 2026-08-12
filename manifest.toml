@@ -1,0 +1,28 @@
+[plugin]
+slug        = "romulation"
+name        = "RomuLation"
+version     = "0.1.0"
+rpp_version = "1"
+license     = "MIT"
+
+# `search` only, and the two absences are for two independent reasons.
+#
+# No `importer`: RomuLation's own robots.txt says
+#     Disallow: /roms/download
+#     Disallow: /roms/newdownload
+#     Disallow: /roms/archive
+# and those are exactly the paths its download control uses. Honouring
+# robots.txt is not optional here, so an importer cannot exist. The download
+# is additionally behind a paid "premium" account and carries an encrypted
+# per-render token, either of which would be enough on its own.
+#
+# No `stream`: RomuLation hosts no player. There is nothing to point at.
+[capabilities]
+search = "romulation.search:Search"
+
+[permissions]
+network  = ["romulation.org", "www.romulation.org"]
+romm_api = []
+
+[config]
+collection = { type = "str", default = "RomuLation" }
