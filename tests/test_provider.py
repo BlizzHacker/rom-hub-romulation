@@ -44,6 +44,8 @@ def test_search_carries_region_and_marks_both_actions_unavailable(search_html):
     assert first.extra["region"] == "USA"
     assert first.extra["downloadable"] == "false"
     assert first.extra["playable"] == "false"
+    assert first.extra["download_requires_browser"] == "true"
+    assert first.extra["account_required"] == "true"
 
 
 def test_platform_filter_accepts_the_romarr_slug(search_html):

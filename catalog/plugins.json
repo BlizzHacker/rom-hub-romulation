@@ -24,9 +24,9 @@
       "search_only": true,
       "key_required": false,
       "in_tree": false,
-      "description": "Searches RomuLation through the site's own public search endpoint, reporting region and a real file size per hit. Indexes metadata only; it does not download.",
+      "description": "Searches RomuLation with region and real file size per hit; ROMarr Capture mirrors rendered search rows and identifies the paid browser session needed for downloads.",
       "terms": "RomuLation hosts mixed game content. This provider indexes metadata the site publishes on its own search page, downloads nothing, and does not touch the paths its robots.txt disallows. It grants no redistribution rights; operators are responsible for using it in accordance with applicable law and the source's terms.",
-      "comments": "Search-only by design. No importer: RomuLation's robots.txt disallows /roms/download, /roms/newdownload and /roms/archive, which are exactly the paths its download control uses; the download is additionally behind a paid premium account and an encrypted per-render token. No stream: the site hosts no player. All 17 platforms map to a ROMarr slug, so nothing is skipped. Note its sitemap omits four served platforms (NES, SNES, Game Boy Color, Sega Genesis), which is why the provider searches live rather than mirroring."
+      "comments": "The standalone plugin is search-only: RomuLation's download is behind a paid account and an encrypted per-render token. ROMarr Capture now reads the rendered search rows and search metadata marks download_requires_browser/account_required, allowing clients to present the operator's authenticated browser as the next step without claiming its session. No stream: the site hosts no player. All 17 platforms map to a ROMarr slug."
     }
   ]
 }

@@ -61,6 +61,10 @@ class Search(SearchProvider):
                     # discover it by trying.
                     "playable": "false",
                     "downloadable": "false",
+                    # The site's token and entitlement live in the
+                    # operator's paid browser session, not in this plugin.
+                    "download_requires_browser": "true",
+                    "account_required": "true",
                 },
             ))
             if len(results) >= limit:

@@ -5,7 +5,8 @@ An RPP v1 provider that searches [RomuLation](https://www.romulation.org).
 | Capability | Status |
 |---|---|
 | `search` | Implemented — the site's own `GET /roms/search` endpoint |
-| `importer` | **Deliberately absent** — forbidden by the site's own robots.txt |
+| `importer` | Absent from the standalone plugin; download needs a paid browser session |
+| ROMarr Capture | Implemented for rendered search rows |
 | `stream` | **Deliberately absent** — RomuLation hosts no player |
 
 Modelled on the Retrostic provider, which is the reference for this family.
@@ -21,7 +22,7 @@ A query costs the site exactly **one page render** — `GET /roms/search?query=�
 is what its own search box submits, and the results are a single page with no
 pagination.
 
-## Why there is no importer
+## Why the standalone plugin has no importer
 
 RomuLation's own `robots.txt`:
 
@@ -44,7 +45,12 @@ Two further gates point the same way, either of which would be enough alone:
   files are behind a paid account.
 
 So `importer` is not declared in `manifest.toml` at all, rather than declared
-and refusing at runtime. Every result carries `downloadable: "false"`.
+and refusing at runtime. This no longer makes the source a dead end: ROMarr
+Capture reads the rendered search rows in the operator's browser, and the
+site's own controls remain available to an entitled signed-in account. Search
+results carry `download_requires_browser: "true"` and
+`account_required: "true"` so clients can show that boundary directly, while
+`downloadable: "false"` continues to describe the standalone plugin.
 
 ## Why there is no stream
 
@@ -113,7 +119,7 @@ A non-200 — 403, 429, 503 — returns no results and is **not retried**.
 ROM_HUB_SRC=/opt/rom-hub/src PYTHONPATH=/opt/romarr pytest tests/ -q
 ```
 
-70 passing. `PYTHONPATH` to ROMarr is what makes the platform-slug checks run
+74 passing. `PYTHONPATH` to ROMarr is what makes the platform-slug checks run
 rather than skip.
 
 ## Terms
